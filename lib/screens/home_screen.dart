@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import '../components/MenuBottom.dart';
 
 class HomeScreen extends StatefulWidget {
   @override
@@ -10,22 +11,21 @@ class _HomeScreenState extends State<HomeScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: null,
-      backgroundColor: Colors.blueAccent,
+      backgroundColor: Colors.white,
+      floatingActionButton: MenuBottom(),
       body: Center(
-         child: Column(
-           mainAxisAlignment: MainAxisAlignment.center,
-           children: [
-             Text('Home Screen'),
-             RaisedButton(
-               onPressed: ()=>{
-                 Navigator.of(context).pushNamed('/choose-report')
-               },
-               child: Text('Go to choose report'),
-             )
-           ],
-         ),
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            Text('Home Screen'),
+            RaisedButton(
+              onPressed: () =>
+                  {Navigator.of(context).pushNamed('/choose-report')},
+              child: Text('Go to choose report'),
+            )
+          ],
         ),
-
+      ),
     );
   }
 }
